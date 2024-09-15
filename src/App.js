@@ -8,11 +8,10 @@ import {
 } from "@mantine/core";
 
 function App() {
-  const { setColorScheme, toggleColorScheme } = useMantineColorScheme({
+  const { toggleColorScheme } = useMantineColorScheme({
     keepTransitions: true,
   });
   const computedColorScheme = useComputedColorScheme("light");
-
 
   const theme = useMantineTheme();
   console.log("🚀 ~ App ~ theme:", theme);
