@@ -1,26 +1,14 @@
 import React from "react";
-import {
-  Button,
-  Group,
-  useComputedColorScheme,
-  useMantineColorScheme,
-  useMantineTheme,
-} from "@mantine/core";
+import { Button, Group, useMantineTheme } from "@mantine/core";
+import Layout from "./Layout";
 
 function App() {
-  const { toggleColorScheme } = useMantineColorScheme({
-    keepTransitions: true,
-  });
-  const computedColorScheme = useComputedColorScheme("light");
-
   const theme = useMantineTheme();
   console.log("🚀 ~ App ~ theme:", theme);
   return (
-    <Group position="center" mt="xl">
-      <Button onClick={toggleColorScheme}>
-        Switch to {computedColorScheme === "dark" ? "Light" : "Dark"} Mode
-      </Button>
-    </Group>
+    <Layout>
+      This is main text
+    </Layout>
   );
 }
 
