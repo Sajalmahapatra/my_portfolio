@@ -7,29 +7,34 @@ import {
 } from "@mantine/core";
 import React, { useMemo } from "react";
 import DarkNightMode from "../DarkNightMode/DarkNightMode";
+import { Link } from "react-router-dom";
+import { IconCode } from "@tabler/icons-react";
+import ScaleRotate from "../Animations/ScaleRotate";
+import headerStyle from "./header.module.css";
 
 const Header = ({ opened, toggle }) => {
   const HeaderLink = useMemo(() => {
     return [
-      { label: "Home" },
-      { label: "Education & Certification" },
-      { label: "Experience" },
-      { label: "Project" },
-      { label: "Contact" },
+      { label: "Home", href: "/" },
+      { label: "Education & Certification", href: "/education" },
+      { label: "Experience", href: "/experience" },
+      { label: "Project", href: "/project" },
+      { label: "Contact", href: "/contact" },
     ].map((head) => (
       <React.Fragment key={head.label}>
-        <UnstyledButton>{head.label}</UnstyledButton>
+        <Link to={head.href} className={headerStyle.unstyled_link}>
+          <UnstyledButton>{head.label}</UnstyledButton>
+        </Link>
       </React.Fragment>
     ));
   }, []);
-
   return (
     <>
-      <AppShellHeader>
+      <AppShellHeader withBorder={true}>
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <Group justify="end" style={{ flex: 1 }}>
-            {/* <MantineLogo size={30} /> */}
+          <Group justify="space-between" style={{ flex: 1 }}>
+            <ScaleRotate IconCode={IconCode} />
             <Group ml="xl" gap={10} visibleFrom="sm">
               {HeaderLink}
             </Group>
