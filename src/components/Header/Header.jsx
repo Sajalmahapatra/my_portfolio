@@ -22,9 +22,11 @@ const Header = ({ opened, toggle }) => {
       { label: "Contact", href: "/contact" },
     ].map((head) => (
       <React.Fragment key={head.label}>
-        <Link to={head.href} className={headerStyle.unstyled_link}>
-          <UnstyledButton>{head.label}</UnstyledButton>
-        </Link>
+        <UnstyledButton>
+          <Link to={head.href} className={headerStyle.unstyled_link}>
+            {head.label}
+          </Link>
+        </UnstyledButton>
       </React.Fragment>
     ));
   }, []);
@@ -35,14 +37,14 @@ const Header = ({ opened, toggle }) => {
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Group justify="space-between" style={{ flex: 1 }}>
             <ScaleRotate IconCode={IconCode} />
-            <Group ml="xl" gap={10} visibleFrom="sm">
+            <Group ml="xl" gap="xl" visibleFrom="sm">
               {HeaderLink}
             </Group>
           </Group>
           <DarkNightMode />
         </Group>
       </AppShellHeader>
-      <AppShellNavbar py="md" px={4}>
+      <AppShellNavbar py="md" px={10} style={{ gap: 10 }} hiddenFrom="sm">
         {HeaderLink}
       </AppShellNavbar>
     </>

@@ -1,9 +1,16 @@
-import React from 'react'
+import { Skeleton } from "@mantine/core";
+import React from "react";
 
 const Education = () => {
   return (
-    <div>Education</div>
-  )
-}
+    <div>
+      {Array(50)
+        .fill(0)
+        .map((_, index) => (
+          <Skeleton key={index} h={28} mt="sm" animate={false} />
+        ))}
+    </div>
+  );
+};
 
-export default Education
+export default Education;

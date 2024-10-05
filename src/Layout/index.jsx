@@ -13,10 +13,17 @@ const Layout = ({ children }) => {
   return (
     <AppShell
       header={{ height: 60 }}
-      styles={(st) =>{
-        console.log("st", st)
-        return st
-      }}
+      styles={(theme) => ({
+        footer: {
+          paddingTop: 20,
+        },
+        // main: {
+        //   display: "flex",
+        //   flexDirection: "column",
+        //   flexGrow: 1, // Ensure Main can grow
+        //   // overflow: "hidden", // Prevent overflow in the parent
+        // },
+      })}
       navbar={{
         width: 300,
         breakpoint: "sm",

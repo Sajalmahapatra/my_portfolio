@@ -1,0 +1,10 @@
+.main_layout {
+    flex-grow: 1;
+    overflow-y: auto;
+    height: 100%;
+    max-height: calc(100vh - 60px);
+}
+
+.main_container_width {
+    width: 100%;
+}
