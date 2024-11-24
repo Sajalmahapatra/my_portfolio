@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Greeting from "../../components/Greeting";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <Greeting />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
