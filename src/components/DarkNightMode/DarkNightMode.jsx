@@ -25,7 +25,7 @@ const DarkNightMode = () => {
       onClick={() => toggleColorScheme()}
       variant="default"
       radius="md"
-      color={computedColorScheme == "dark" ? "white" : "black"}
+      color={computedColorScheme === "dark" ? "white" : "black"}
       size="lg"
       aria-label="Toggle color scheme"
     >

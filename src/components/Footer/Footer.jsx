@@ -4,7 +4,7 @@ import { greeting } from "../../portfolio";
 
 const Footer = () => {
   return (
-    <AppShellFooter>
+    <AppShellFooter visibleFrom="sm">
       <Group justify="center">
         Made with<span role="img">❤️</span>by {greeting.title2}
       </Group>
