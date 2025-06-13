@@ -1,0 +1,31 @@
+.root {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @media (min-width: 48em) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+    }
+}
+
+.title {
+    font-weight: 900;
+    font-size: 34px;
+    margin-bottom: var(--mantine-spacing-md);
+    font-family:
+        var(--mantine-font-family);
+
+}
+
+.mobileImage {
+    @media (min-width: 48em) {
+        display: none;
+    }
+}
+
+.desktopImage {
+    @media (max-width: 47.99em) {
+        display: none;
+    }
+}

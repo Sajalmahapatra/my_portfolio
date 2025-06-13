@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const ScaleRotate = ({ IconCode }) => {
-  const AnimatedIconCode = motion(IconCode);
+  const AnimatedIconCode = motion.create(IconCode);
 
   return (
     <AnimatedIconCode

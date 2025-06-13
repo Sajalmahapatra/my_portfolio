@@ -1,10 +1,10 @@
 import React from "react";
-import { Flex, Stack, Text, useMantineColorScheme } from "@mantine/core";
+import { Flex, Stack, Text } from "@mantine/core";
 import { greeting } from "../../portfolio";
+import HelloAnimation from "../Animations/HelloAnimation";
+import FeelingProud from "../Icons/FeelingProud";
 
 const Greeting = () => {
-  const { colorScheme } = useMantineColorScheme();
-
   return (
     <Flex
       direction={{ base: "column", sm: "row" }}
@@ -15,18 +15,13 @@ const Greeting = () => {
       <Flex flex="1">
         <Stack justify="center" gap="md">
           <Text component="h1" fw="bold" fz="h1">
-            {greeting.title}
+            {greeting.title} <HelloAnimation />
           </Text>
-          <Text
-            component="p"
-            c={colorScheme === "light" ? "#7F8DAA" : "#8D8D8D"}
-            fw="bold"
-            fz="h2"
-          >
+          <Text component="p" c="secondaryText" fw="bold" fz="h2">
             <Text component="span" fw="bold" fz="h2">
               I'm{" "}
             </Text>
-            <Text component="span" c="#E3405F" fw="bold" fz="h2">
+            <Text component="span" c="accent" fw="bold" fz="h2">
               {greeting.full_name}{" "}
             </Text>
             {greeting.subTitle}
@@ -35,7 +30,9 @@ const Greeting = () => {
       </Flex>
 
       {/* Right Section */}
-      <Flex flex="1">2</Flex>
+      <Flex flex="1">
+        <FeelingProud/>
+      </Flex>
     </Flex>
   );
 };
